@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/ic_shopping_cart_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Cart" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_library_books_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Orders" />
+        <item
+            android:id="@+id/nav_categories"
+            android:icon="@drawable/ic_menu_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Categories" />
+        <item
+            android:id="@+id/nav_settins"
+            android:icon="@drawable/ic_settings_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit_to_app_24dp"
+            android:iconTint="@color/colorPrimary"
+            android:title="Log out" />
+
+        <item android:title="Application"
+            android:checkableBehavior="single">
+            <menu>
+                <item
+                    android:id="@+id/nav_about_us"
+                    android:icon="@drawable/ic_info_24dp"
+                    android:iconTint="@color/colorPrimary"
+                    android:title="About us" />
+
+                <item
+                    android:id="@+id/nav_rate_us"
+                    android:icon="@drawable/ic_star_24dp"
+                    android:iconTint="@color/colorPrimary"
+                    android:title="Rate us" />
+
+                <item
+                    android:id="@+id/nav_help"
+                    android:icon="@drawable/ic_help_24dp"
+                    android:iconTint="@color/colorPrimary"
+                    android:title="Help" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

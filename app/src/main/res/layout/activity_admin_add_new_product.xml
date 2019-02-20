@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context="com.nudle.rentplace.AdminAddNewProductActivity">
+
+
+
+    <ImageView
+        android:id="@+id/select_product_image"
+        android:layout_width="139dp"
+        android:layout_height="134dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/photocamera" />
+
+
+    <EditText
+        android:id="@+id/product_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:layout_below="@+id/select_product_image"
+        android:inputType="text"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        android:hint="Product Name..."
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/inputs_design"
+        />
+
+
+    <EditText
+        android:id="@+id/product_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:layout_below="@+id/product_name"
+        android:inputType="text"
+        android:layout_marginTop="6dp"
+        android:padding="20dp"
+        android:hint="Product Description..."
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/inputs_design"
+        />
+
+
+    <EditText
+        android:id="@+id/product_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_description"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/inputs_design"
+        android:hint="Product Price..."
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/colorPrimaryDark" />
+
+    <EditText
+        android:id="@+id/product_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_price"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/inputs_design"
+        android:hint="Product Time..."
+        android:textColor="@android:color/white"
+        android:inputType="datetime"
+        android:padding="20dp"
+        android:textColorHint="@color/colorPrimaryDark" />
+
+
+    <android.support.design.button.MaterialButton
+        app:cornerRadius="40dp"
+        app:backgroundTint="@color/colorPrimaryDark"
+        android:id="@+id/add_new_product"
+        android:layout_width="325dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/product_time"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/buttons"
+        android:padding="17dp"
+        android:text="Add Product"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>

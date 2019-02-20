@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="40dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/order_user_name"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="UserName"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/order_phone_number"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/order_address_city"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Address, City"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/order_user_name"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>/>
+
+        <TextView
+            android:id="@+id/order_total_price"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Total Price"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/order_phone_number"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/order_date_time"
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/order_address_city"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="58dp"
+            android:gravity="center"
+            android:text="Date Time"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/show_all_products_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/order_date_time"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/colorBackground"
+            android:text="Show This Order Products"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp"
+            app:cornerRadius="40dp"/>
+
+    </RelativeLayout>
+
+</android.support.design.card.MaterialCardView>
