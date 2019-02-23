@@ -10,6 +10,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +36,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import es.dmoral.toasty.Toasty;
 import io.paperdb.Paper;
@@ -47,6 +51,13 @@ public class HomeActivity extends AppCompatActivity
     RecyclerView.LayoutManager layoutManager;
     AwesomeBar bar;
     DrawerLayout drawerLayout;
+
+    private static final String TAG = "HomeActivity";
+    private static final int NUM_COLUMNS = 2;
+    private ArrayList<String> mImageUrls = new ArrayList<>();
+    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mDescriptons = new ArrayList<>();
+    private ArrayList<String> mTimes = new ArrayList<>();
 
 
     @Override
@@ -148,6 +159,17 @@ public class HomeActivity extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
     }
 
+    /*private void initRecyclerView(){
+        Log.d(TAG, "initRecyclerView: initializing staggered recyclerview.");
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_menu);
+        StraggerdRecyclerViewAdapter staggeredRecyclerViewAdapter =
+                new StraggerdRecyclerViewAdapter(this,mTimes, mDescriptons, mNames, mImageUrls);
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(staggeredGridLayoutManager);
+        recyclerView.setAdapter(staggeredRecyclerViewAdapter);
+    }*/
+
     @Override
     protected void onStart()
     {
@@ -189,6 +211,10 @@ public class HomeActivity extends AppCompatActivity
                         return holder;
                     }
                 };
+
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(staggeredGridLayoutManager);
+
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,9 @@ public class SearchProductActivity extends AppCompatActivity {
     private EditText inputText;
     private RecyclerView searchList;
     private String SearchInput;
+
+    private static final int NUM_COLUMNS = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +90,10 @@ public class SearchProductActivity extends AppCompatActivity {
                 return holder;
             }
         };
+
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayoutManager.VERTICAL);
+        searchList.setLayoutManager(staggeredGridLayoutManager);
+
         searchList.setAdapter(adapter);
         adapter.startListening();
     }

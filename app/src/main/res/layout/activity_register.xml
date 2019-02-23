@@ -33,8 +33,8 @@
         android:hint="Name"
         android:inputType="text"
         android:padding="20dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         android:textSize="17dp"
         android:textStyle="bold" />
 
@@ -54,8 +54,8 @@
         android:hint="Phone number"
         android:inputType="phone"
         android:padding="20dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         android:textSize="17dp"
         android:textStyle="bold" />
 
@@ -76,8 +76,8 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="20dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
         android:textSize="17dp"
         android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="18dp"
-        app:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTint="@color/colorPrimary"
         app:cornerRadius="40dp" />
 
 </RelativeLayout>
