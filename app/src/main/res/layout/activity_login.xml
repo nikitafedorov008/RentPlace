@@ -60,55 +60,38 @@
         android:textSize="17dp"
         android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/linear_layout_1"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
+
+    <com.rey.material.widget.CheckBox
+        android:id="@+id/remember_me_chkb"
+        style="@style/Material.Drawable.CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/login_password_input"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="Remember me"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:cbd_strokeColor="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/forget_password_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_password_input"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:gravity=""
-        android:orientation="horizontal">
-
-        <com.rey.material.widget.CheckBox
-            android:id="@+id/remember_me_chkb"
-            style="@style/Material.Drawable.CheckBox"
-            android:layout_width="198dp"
-            android:layout_height="43dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="17dp"
-            android:layout_marginLeft="17dp"
-            android:layout_marginBottom="176dp"
-            android:gravity="center_vertical"
-            android:text="Remember me"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            app:cbd_strokeColor="@color/colorPrimary"/>
-
-        <TextView
-            android:id="@+id/forget_password_link"
-            android:layout_width="173dp"
-            android:layout_height="39dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginEnd="29dp"
-            android:layout_marginRight="29dp"
-            android:layout_marginBottom="179dp"
-            android:text="Forget Password?"
-            android:textColor="@color/colorPrimary"
-            android:textSize="17dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:text="Forget Password?"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17dp"
+        android:textStyle="bold" />
 
 
     <android.support.design.button.MaterialButton
@@ -117,7 +100,7 @@
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linear_layout_1"
+        android:layout_below="@+id/remember_me_chkb"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -155,13 +138,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_btn"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="23dp"
         android:text="I'm not an admin?"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textSize="20dp"
         android:textStyle="bold"
         android:visibility="invisible" />
