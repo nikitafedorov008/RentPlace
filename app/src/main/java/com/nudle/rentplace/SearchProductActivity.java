@@ -1,6 +1,7 @@
 package com.nudle.rentplace;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,7 +29,7 @@ public class SearchProductActivity extends AppCompatActivity {
     private RecyclerView searchList;
     private String SearchInput;
 
-    private static final int NUM_COLUMNS = 2;
+    private static  int NUM_COLUMNS = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,13 @@ public class SearchProductActivity extends AppCompatActivity {
             }
         };
 
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            NUM_COLUMNS = 2;
+        } else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            NUM_COLUMNS  = 3;
+        }else{
+            //Nothing
+        }
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayoutManager.VERTICAL);
         searchList.setLayoutManager(staggeredGridLayoutManager);
 

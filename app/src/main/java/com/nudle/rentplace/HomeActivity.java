@@ -2,6 +2,7 @@ package com.nudle.rentplace;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -25,6 +26,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.request.RequestOptions;
 import com.github.florent37.awesomebar.ActionItem;
 import com.github.florent37.awesomebar.AwesomeBar;
 import com.nudle.rentplace.model.Products;
@@ -53,7 +55,7 @@ public class HomeActivity extends AppCompatActivity
     DrawerLayout drawerLayout;
 
     private static final String TAG = "HomeActivity";
-    private static final int NUM_COLUMNS = 2;
+    private static  int NUM_COLUMNS = 2;
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mDescriptons = new ArrayList<>();
@@ -171,8 +173,7 @@ public class HomeActivity extends AppCompatActivity
     }*/
 
     @Override
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
 
         FirebaseRecyclerOptions<Products> options =
@@ -184,8 +185,7 @@ public class HomeActivity extends AppCompatActivity
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model)
-                    {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model) {
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductTime.setText("Time = " + model.getPtime() + " days");
                         holder.txtProductDescription.setText(model.getDescription());
@@ -204,14 +204,20 @@ public class HomeActivity extends AppCompatActivity
 
                     @NonNull
                     @Override
-                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-                    {
+                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items_layout, parent, false);
                         ProductViewHolder holder = new ProductViewHolder(view);
                         return holder;
                     }
                 };
 
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            NUM_COLUMNS = 2;
+        } else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            NUM_COLUMNS  = 3;
+        }else{
+            //Nothing
+        }
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
 
