@@ -235,8 +235,15 @@ public class AdminAddNewProductActivity extends AppCompatActivity
                     {
                         if (task.isSuccessful())
                         {
-                            Intent intent = new Intent(AdminAddNewProductActivity.this, AdminCategoryActivity.class);
-                            startActivity(intent);
+                            if (LoginActivity.parentDbName == "Users"){
+                                Intent intent = new Intent(AdminAddNewProductActivity.this, HomeActivity.class);
+                                startActivity(intent);
+                            }else {
+                                Intent intent = new Intent(AdminAddNewProductActivity.this, AdminCategoryActivity.class);
+                                startActivity(intent);
+                            }
+                            /*Intent intent = new Intent(AdminAddNewProductActivity.this, AdminCategoryActivity.class);
+                            startActivity(intent);*/
 
                             loadingBar.dismiss();
                             Toasty.success(AdminAddNewProductActivity.this, "Product is added successfully..", Toast.LENGTH_SHORT).show();
