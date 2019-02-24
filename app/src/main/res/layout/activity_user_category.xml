@@ -118,14 +118,15 @@
     </LinearLayout>
 
 
+
     <LinearLayout
         android:id="@+id/linear3_category_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/check_orders_btn"
         android:layout_marginStart="0dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="50dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -133,27 +134,66 @@
             android:id="@+id/games_and_consoles"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/ic_gamepad_24dp" />
+            android:src="@drawable/ic_gamepad_24dp"
+            />
 
         <ImageView
             android:id="@+id/electronics"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/ic_local_laundry_service_24dp" />
+            android:src="@drawable/ic_local_laundry_service_24dp"
+            />
 
         <ImageView
             android:id="@+id/computers_and_laptops"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/ic_computer_24dp" />
+            android:src="@drawable/ic_computer_24dp"
+            />
 
         <ImageView
             android:id="@+id/phones_and_tablets"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:src="@drawable/ic_phone_android_24dp"
             android:layout_marginStart="16dp"
-            android:src="@drawable/ic_phone_android_24dp" />
+            />
 
     </LinearLayout>
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/check_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/admin_logout_btn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Check new Orders"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:cornerRadius="15dp" />
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/admin_logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:cornerRadius="15dp" />
 
 </RelativeLayout>

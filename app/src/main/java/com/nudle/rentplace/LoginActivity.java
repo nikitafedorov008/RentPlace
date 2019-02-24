@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity
     private ProgressDialog loadingBar;
     private TextView AdminLink, NotAdminLink;
 
-    private String parentDbName = "Users";
+    public static String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
 
 

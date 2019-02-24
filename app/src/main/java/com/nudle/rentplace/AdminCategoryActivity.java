@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.nudle.rentplace.prevalent.Prevalent;
+
 public class AdminCategoryActivity extends AppCompatActivity
 {
     private ImageView books, children, clothes, shoes;
@@ -45,6 +47,14 @@ public class AdminCategoryActivity extends AppCompatActivity
 
             }
         });
+
+        if (LoginActivity.parentDbName == "Users"){
+            LogoutBtn.setVisibility(View.INVISIBLE);
+            CheckOrdersBtn.setVisibility(View.INVISIBLE);
+        }else {
+            LogoutBtn.setVisibility(View.VISIBLE);
+            CheckOrdersBtn.setVisibility(View.VISIBLE);
+        }
 
         books = (ImageView) findViewById(R.id.books);
         children = (ImageView) findViewById(R.id.children);
