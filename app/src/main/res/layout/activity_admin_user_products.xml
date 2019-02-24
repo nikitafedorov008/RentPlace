@@ -7,7 +7,7 @@
     android:background="@color/colorBackground"
     tools:context="com.nudle.rentplace.AdminUserProductsActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/r3"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -24,9 +24,9 @@
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             />
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/products_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,6 +34,6 @@
         android:layout_below="@+id/r3"
         android:layout_marginBottom="-6dp">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

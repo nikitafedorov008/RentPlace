@@ -94,7 +94,7 @@
         android:textStyle="bold" />
 
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         app:cornerRadius="40dp"
         app:backgroundTint="@color/colorPrimary"
         android:id="@+id/login_btn"

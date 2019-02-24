@@ -37,7 +37,7 @@
         android:textStyle="bold" />
 
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         app:cornerRadius="40dp"
         app:backgroundTint="@color/colorPrimaryDark"
         android:id="@+id/main_login_btn"
@@ -56,7 +56,7 @@
         android:textColor="@android:color/white"
         />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         app:cornerRadius="40dp"
         android:id="@+id/main_join_now_btn"
         android:layout_width="match_parent"

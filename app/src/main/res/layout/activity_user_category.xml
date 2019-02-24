@@ -161,7 +161,7 @@
 
     </LinearLayout>
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/check_orders_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -177,7 +177,7 @@
         android:visibility="invisible"
         app:cornerRadius="15dp" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/admin_logout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

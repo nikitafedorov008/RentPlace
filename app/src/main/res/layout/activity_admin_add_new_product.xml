@@ -87,7 +87,7 @@
         android:textColorHint="@color/colorPrimary" />
 
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/add_new_product"
         android:layout_width="325dp"
         android:layout_height="75dp"
