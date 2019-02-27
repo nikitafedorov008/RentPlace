@@ -4,13 +4,32 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="10dp"
-    app:cardElevation="15dp"
+    app:cardElevation="35dp"
     app:cardCornerRadius="15dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/cart_product_sname"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/cart_product_ssurname"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@android:color/transparent"/>
+
+
+        <TextView
+            android:id="@+id/cart_product_sphone"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@android:color/transparent"/>
 
         <TextView
             android:id="@+id/cart_product_name"

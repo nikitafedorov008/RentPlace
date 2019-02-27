@@ -14,6 +14,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.nudle.rentplace.model.Cart;
+import com.nudle.rentplace.model.Users;
 import com.nudle.rentplace.prevalent.Prevalent;
 
 import java.text.SimpleDateFormat;
@@ -25,6 +27,7 @@ import es.dmoral.toasty.Toasty;
 public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
     private EditText nameEditText, phoneEditText, addressEditText, cityEditText;
+    private EditText snameEditText, ssurnameEditText, sphoneEditText;
     private Button confirmOrderBtn;
 
     private String totalAmount = "";
@@ -42,6 +45,11 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
         phoneEditText = (EditText) findViewById(R.id.shippment_phone_number);
         addressEditText = (EditText) findViewById(R.id.shippment_address);
         cityEditText = (EditText) findViewById(R.id.shippment_city);
+
+
+        snameEditText = (EditText) findViewById(R.id.sname_c);
+        ssurnameEditText = (EditText) findViewById(R.id.ssurname_c);
+        sphoneEditText = (EditText) findViewById(R.id.sphone_c);
 
 
         confirmOrderBtn.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +101,16 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
         orderMap.put("date",saveCurrentDate);
         orderMap.put("time",saveCurrentTime);
         orderMap.put("state", "not shipped");
+
+        orderMap.put("sname", snameEditText.getText().toString());
+        orderMap.put("ssurname", ssurnameEditText.getText().toString());
+        orderMap.put("sphone", sphoneEditText.getText().toString());
+        orderMap.put("sname", Cart.sname);
+        orderMap.put("ssurname",Cart.ssurname);
+        orderMap.put("sphone",Cart.sphone);
+        /*holder.txtSname.setText(model.getSname());
+        holder.txtSphone.setText(model.getSsurname());
+        holder.txtSphone.setText(model.getSphone());*/
 
         orderRef.updateChildren(orderMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

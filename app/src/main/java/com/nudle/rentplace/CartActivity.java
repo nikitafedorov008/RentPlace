@@ -98,6 +98,10 @@ public class CartActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model) {
 
+                holder.txtSname.setText(model.getSname());
+                holder.txtSphone.setText(model.getSsurname());
+                holder.txtSphone.setText(model.getSphone());
+
                 holder.txtProductQuantity.setText("Quantity = " + model.getQuantity());
                 holder.txtProductPrice.setText("Price = " + model.getPrice());
                 holder.txtProductName.setText(model.getPname());

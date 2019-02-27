@@ -3,13 +3,15 @@ package com.nudle.rentplace.model;
 public class Products
 {
     private String pname, ptime, description, price, image, category, pid, date, time;
+    private String sname, ssurname, sphone;
 
     public Products()
     {
 
     }
 
-    public Products(String pname,String ptime, String description, String price, String image, String category, String pid, String date, String time) {
+    public Products(String pname,String ptime, String description, String price, String image, String category, String pid, String date, String time,
+                    String ssname, String ssurname, String saddress) {
         this.pname = pname;
         this.ptime = ptime;
         this.description = description;
@@ -19,6 +21,10 @@ public class Products
         this.pid = pid;
         this.date = date;
         this.time = time;
+
+        this.sname = ssname;
+        this.ssurname = ssurname;
+        this.sphone = sphone;
     }
 
 
@@ -92,5 +98,30 @@ public class Products
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+
+    public String getSname() {
+        return sname;
+    }
+
+    public void setSname(String sname) {
+        this.sname = sname;
+    }
+
+    public String getSsurname() {
+        return ssurname;
+    }
+
+    public void setSsurname(String ssurname) {
+        this.ssurname = ssurname;
+    }
+
+    public String getSphone() {
+        return sphone;
+    }
+
+    public void setSphone(String sphone) {
+        this.sphone = sphone;
     }
 }

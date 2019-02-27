@@ -2,7 +2,7 @@ package com.nudle.rentplace.model;
 
 public class Users
 {
-    private String name, surname, phone, password, image, address;
+    public static String name, surname, phone, password, image, address;
 
     public Users()
     {

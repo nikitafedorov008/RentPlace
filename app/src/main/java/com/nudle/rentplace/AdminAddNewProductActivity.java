@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.nudle.rentplace.model.Users;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -227,6 +228,12 @@ public class AdminAddNewProductActivity extends AppCompatActivity
         productMap.put("price", Price);
         productMap.put("pname", Pname);
         productMap.put("ptime", Ptime);
+
+        productMap.put("sname", Users.name);
+        productMap.put("ssurname", Users.surname);
+        productMap.put("sphone", Users.phone);
+        productMap.put("simage", Users.image);
+        productMap.put("saddress", Users.address);
 
         ProductsRef.child(productRandomKey).updateChildren(productMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

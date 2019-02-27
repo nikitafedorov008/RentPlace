@@ -8,17 +8,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import es.dmoral.toasty.Toasty;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.nudle.rentplace.model.AdminOrders;
+import com.nudle.rentplace.model.Users;
 
 public class AdminNewOrdersActivity extends AppCompatActivity {
 
@@ -34,21 +38,35 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
 
         orderList = findViewById(R.id.orders_list);
         orderList.setLayoutManager(new LinearLayoutManager(this));
+
+        if (!Users.name.equals(AdminOrders.sname)) {
+            orderList.setVisibility(View.INVISIBLE);
+        } else if (!Users.surname.equals(AdminOrders.ssurname)) {
+            orderList.setVisibility(View.INVISIBLE);
+        } else if (!Users.phone.equals(AdminOrders.sphone)) {
+            orderList.setVisibility(View.INVISIBLE);
+        } else {
+            onStart();
+        }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
+
+
         FirebaseRecyclerOptions<AdminOrders> options =
                 new FirebaseRecyclerOptions.Builder<AdminOrders>()
-                .setQuery(ordersRef, AdminOrders.class)
-                .build();
+                        .setQuery(ordersRef, AdminOrders.class)
+                        .build();
 
         FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder> adapter =
                 new FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder>(options) {
                     @Override
                     protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, final int position, @NonNull final AdminOrders model) {
+
+
 
                         holder.userName.setText("Name: " + model.getName());
                         holder.userPhoneNumber.setText("Phone: " + model.getPhone());
@@ -73,7 +91,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
 
-                                CharSequence options[] = new  CharSequence[]{
+                                CharSequence options[] = new CharSequence[]{
                                         "YES",
                                         "NO"
                                 };
@@ -85,15 +103,15 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                                       if (i == 0){
+                                        if (i == 0) {
 
-                                           String uID = getRef(position).getKey();
+                                            String uID = getRef(position).getKey();
 
-                                           RemoverOrder(uID);
+                                            RemoverOrder(uID);
 
-                                       }else {
-                                           finish();
-                                       }
+                                        } else {
+                                            finish();
+                                        }
 
                                     }
                                 });
@@ -114,8 +132,8 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                 };
         orderList.setAdapter(adapter);
         adapter.startListening();
-
     }
+
 
     public static class AdminOrdersViewHolder extends RecyclerView.ViewHolder{
 

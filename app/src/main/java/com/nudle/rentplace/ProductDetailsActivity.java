@@ -34,6 +34,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView productPrice, productDescription, productName, productTime;
+    private TextView sname, ssurname, sphone;
     private String productID = "", state = "Normal";
 
     @Override
@@ -50,6 +51,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productTime = (TextView) findViewById(R.id.product_time_details);
         productDescription = (TextView) findViewById(R.id.product_description_details);
         productPrice = (TextView) findViewById(R.id.product_price_details);
+
+        sname = (TextView) findViewById(R.id.product_sname_details);
+        ssurname = (TextView) findViewById(R.id.product_ssurname_details);
+        sphone = (TextView) findViewById(R.id.product_sphone_details);
 
         getProductDetails(productID);
 
@@ -102,6 +107,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartMap.put("quantity",numberButton.getNumber());
         cartMap.put("discount","");
 
+        cartMap.put("sname",sname.getText().toString());
+        cartMap.put("ssurname",ssurname.getText().toString());
+        cartMap.put("sphone",sphone.getText().toString());
+
         cartListRef.child("User View").child(Prevalent.currentOnlineUser.getPhone())
                 .child("Products")
                 .child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -140,6 +149,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     productTime.setText(products.getPtime() + " days");
                     productPrice.setText(products.getPrice() + "₽");
                     productDescription.setText(products.getDescription());
+
+                    sname.setText(products.getSname());
+                    ssurname.setText(products.getSsurname());
+                    sphone.setText(products.getSphone());
+
                     Picasso.get().load(products.getImage()).into(productImage);
                 }
             }

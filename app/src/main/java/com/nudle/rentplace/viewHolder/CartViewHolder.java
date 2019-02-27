@@ -11,6 +11,7 @@ import com.nudle.rentplace.R;
 public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView txtProductName, txtProductPrice, txtProductQuantity, txtProductTime;
+    public TextView txtSname, txtSsurname, txtSphone;
     private ItemClickListner itemClickListner;
 
     public CartViewHolder(@NonNull View itemView) {
@@ -20,6 +21,10 @@ public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         txtProductPrice = itemView.findViewById(R.id.cart_product_price);
         txtProductQuantity = itemView.findViewById(R.id.cart_product_quantity);
         txtProductTime = itemView.findViewById(R.id.cart_product_time);
+
+        txtSname = itemView.findViewById(R.id.cart_product_sname);
+        txtSsurname = itemView.findViewById(R.id.cart_product_ssurname);
+        txtSphone = itemView.findViewById(R.id.cart_product_sphone);
 
     }
 

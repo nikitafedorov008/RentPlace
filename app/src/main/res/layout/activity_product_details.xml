@@ -112,6 +112,24 @@
         android:layout_marginTop="10dp"
     />
 
+    <TextView
+        android:id="@+id/product_sname_details"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/product_ssurname_details"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/product_sphone_details"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@android:color/transparent"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/pd_add_to_cart_button"
         android:layout_width="match_parent"

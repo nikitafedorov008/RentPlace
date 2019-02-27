@@ -3,17 +3,23 @@ package com.nudle.rentplace.model;
 public class Cart {
 
     private String pid, pname, price, quantity, discount, ptime;
+    public static String sname, ssurname, sphone;
 
     public Cart() {
     }
 
-    public Cart(String pid, String pname, String price, String quantity, String discount, String ptime) {
+    public Cart(String pid, String pname, String price, String quantity, String discount, String ptime,
+                String sname, String ssurname, String sphone) {
         this.pid = pid;
         this.pname = pname;
         this.price = price;
         this.quantity = quantity;
         this.discount = discount;
         this.ptime = ptime;
+
+        this.sname = sname;
+        this.ssurname = ssurname;
+        this.sphone = sphone;
     }
 
     public String getPid() {
@@ -62,5 +68,30 @@ public class Cart {
 
     public void setPtime(String ptime) {
         this.ptime = ptime;
+    }
+
+
+    public String getSname() {
+        return sname;
+    }
+
+    public void setSname(String sname) {
+        this.sname = sname;
+    }
+
+    public String getSsurname() {
+        return ssurname;
+    }
+
+    public void setSsurname(String ssurname) {
+        this.ssurname = ssurname;
+    }
+
+    public String getSphone() {
+        return sphone;
+    }
+
+    public void setSphone(String sphone) {
+        this.sphone = sphone;
     }
 }
