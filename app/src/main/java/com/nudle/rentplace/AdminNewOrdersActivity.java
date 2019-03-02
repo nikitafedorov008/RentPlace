@@ -39,15 +39,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
         orderList = findViewById(R.id.orders_list);
         orderList.setLayoutManager(new LinearLayoutManager(this));
 
-        if (!Users.name.equals(AdminOrders.sname)) {
-            orderList.setVisibility(View.INVISIBLE);
-        } else if (!Users.surname.equals(AdminOrders.ssurname)) {
-            orderList.setVisibility(View.INVISIBLE);
-        } else if (!Users.phone.equals(AdminOrders.sphone)) {
-            orderList.setVisibility(View.INVISIBLE);
-        } else {
-            onStart();
-        }
+
     }
 
     @Override
@@ -66,7 +58,18 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                     @Override
                     protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, final int position, @NonNull final AdminOrders model) {
 
-
+                        if (!Users.name.equals(AdminOrders.sname)) {
+                            holder.itemView.setVisibility(View.INVISIBLE);
+                            //Toasty.warning(AdminNewOrdersActivity.this, "Sorry, this page not ready(", Toast.LENGTH_SHORT).show();
+                        } else if (!Users.surname.equals(AdminOrders.ssurname)) {
+                            holder.userShippingAddress.setVisibility(View.INVISIBLE);
+                            //Toasty.warning(AdminNewOrdersActivity.this, "Sorry, this page not ready(", Toast.LENGTH_SHORT).show();
+                        } else if (!Users.phone.equals(AdminOrders.sphone)) {
+                            holder.userPhoneNumber.setVisibility(View.INVISIBLE);
+                            //Toasty.warning(AdminNewOrdersActivity.this, "Sorry, this page not ready(", Toast.LENGTH_SHORT).show();
+                        } else {
+                            //onStart();
+                        }
 
                         holder.userName.setText("Name: " + model.getName());
                         holder.userPhoneNumber.setText("Phone: " + model.getPhone());
@@ -137,7 +140,7 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
 
     public static class AdminOrdersViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView userName, userPhoneNumber, userTotalPrice, userDateTime, userShippingAddress;
+        public static TextView userName, userPhoneNumber, userTotalPrice, userDateTime, userShippingAddress;
         public Button ShowOrdersBtn;
 
         public AdminOrdersViewHolder(@NonNull View itemView) {
