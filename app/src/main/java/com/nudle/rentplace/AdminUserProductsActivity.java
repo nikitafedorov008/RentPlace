@@ -15,6 +15,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.nudle.rentplace.model.AdminOrders;
 import com.nudle.rentplace.model.Cart;
 import com.nudle.rentplace.model.Users;
 import com.nudle.rentplace.viewHolder.CartViewHolder;
@@ -59,6 +60,19 @@ public class AdminUserProductsActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull Cart model) {
+
+                if (!Users.name.equals(Cart.sname)) {
+                    holder.itemView.setVisibility(View.INVISIBLE);
+                    //Toasty.warning(AdminNewOrdersActivity.this, "Sorry, this page not ready(", Toast.LENGTH_SHORT).show();
+                } else if (!Users.surname.equals(Cart.ssurname)) {
+                    holder.txtProductQuantity.setVisibility(View.INVISIBLE);
+                    //Toasty.warning(AdminNewOrdersActivity.this, "Sorry, this page not ready(", Toast.LENGTH_SHORT).show();
+                } else if (!Users.phone.equals(Cart.sphone)) {
+                    holder.txtProductTime.setVisibility(View.INVISIBLE);
+                    //Toasty.warning(AdminNewOrdersActivity.this, "Sorry, this page not ready(", Toast.LENGTH_SHORT).show();
+                } else {
+                    //onStart();
+                }
 
                 holder.txtSname.setText(model.getSname());
                 holder.txtSphone.setText(model.getSsurname());
