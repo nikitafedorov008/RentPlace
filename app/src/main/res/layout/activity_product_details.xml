@@ -1,147 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    tools:context="com.nudle.rentplace.ProductDetailsActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:background="@color/black_overlay"
+    tools:context=".ProductDetailsActivity">
 
-    <ImageView
-        android:id="@+id/product_image_details"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:scaleType="centerCrop"
-        />
 
-    <TextView
-        android:id="@+id/product_name_details"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image_details"
-        android:text="Product Name"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textSize="32dp"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/product_description_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/products_info"
-        android:text="Product Description"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/products_info"
-        android:paddingLeft="42dp"
-        android:paddingRight="42dp"
-        android:foregroundGravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/product_name_details"
-        android:layout_marginTop="2dp"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="302dp">
+        <ImageView
+            android:id="@+id/product_image_details"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:scaleType="centerCrop" />
+
+
+        <TextView
+            android:id="@+id/product_name_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/product_image_details"
+            android:layout_marginTop="40dp"
+            android:text="Product Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/product_description_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name_details"
+            android:text="Product Description"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
 
         <TextView
             android:id="@+id/product_price_details"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/inputs_design"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:gravity="center"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
+            android:layout_below="@id/product_description_details"
             android:text="Product Price"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
 
-        <TextView
-            android:id="@+id/product_time_details"
+        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+            android:id="@+id/number_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/inputs_design"
-            android:backgroundTint="@android:color/holo_green_light"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/pd_add_to_cart_button"
+            android:layout_marginTop="10dp"
+            android:background="@color/black_overlay"
+            android:elevation="6dp"
+            app:finalNumber="100"
+            app:initialNumber="1"
+            app:textSize="16sp">
+
+        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/pd_add_to_cart_button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:elevation="8dp"
+            app:cornerRadius="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/black_overlay"
             android:gravity="center"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:text="Product Time"
-            android:textColor="@android:color/white"
+            android:text="Add to Cart"
+            android:textColor="@color/black_overlay"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
-
-
-    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-        android:id="@+id/number_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        app:textSize="16dp"
-        app:initialNumber="1"
-        app:finalNumber="100"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/product_description_details"
-        android:layout_marginTop="10dp"
-    />
-
-    <TextView
-        android:id="@+id/product_sname_details"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textColor="@android:color/transparent"/>
-
-    <TextView
-        android:id="@+id/product_ssurname_details"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textColor="@android:color/transparent"/>
-
-    <TextView
-        android:id="@+id/product_sphone_details"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textColor="@android:color/transparent"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/pd_add_to_cart_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="-1dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="0dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Add to cart"
-        android:padding="10dp"
-        android:textColor="@android:color/white"
-        android:textSize="18dp" />
-
-</RelativeLayout>
+</ScrollView>

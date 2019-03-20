@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_overlay"
+    tools:context=".SearchProductsActivity">
+
+
+
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@+id/searchBar"
+            style="@style/MaterialSearchBarLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSearch"
+            android:layout_marginVertical="8dp"
+            android:layout_marginHorizontal="16dp"
+            app:mt_navIconEnabled="true"
+            app:mt_hintColor="@color/colorPrimary"
+            app:mt_textColor="@color/colorPrimary"
+            app:mt_highlightedTextColor="@color/colorPrimary"
+            app:mt_placeholderColor="@color/colorPrimary"
+            app:mt_roundedSearchBarEnabled="true"
+            app:mt_placeholder="Search" />
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchBar">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

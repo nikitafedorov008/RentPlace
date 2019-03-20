@@ -4,36 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    tools:context="com.nudle.rentplace.AdminNewOrdersActivity">
+    android:background="@color/black_overlay"
+    tools:context=".AdminNewOrdersActivity">
 
-    <androidx.appcompat.widget.Toolbar
+
+    <RelativeLayout
         android:id="@+id/r2"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/colorPrimary"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
         android:layout_alignParentTop="true">
+
 
         <TextView
             android:id="@+id/total_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Orders"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginTop="10dp"
-            />
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_marginBottom="15dp"
+            android:text="New Orders"
+            android:textAlignment="center"
+            android:textColor="@color/black_overlay"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/orders_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/next_btn"
-        android:layout_below="@+id/r2"
-        android:layout_marginBottom="-6dp">
-
+        android:layout_below="@+id/r2">
     </androidx.recyclerview.widget.RecyclerView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:elevation="8dp"
+        android:layout_margin="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@android:color/white"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/qr_code" />
+
 
 </RelativeLayout>
