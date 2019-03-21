@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/itemCart"
-        android:icon="@drawable/ic_add_shopping_cart_bar"
+        android:icon="@drawable/ic_shopping_cart_24dp"
         android:title=""
         app:showAsAction="always" />
     <item

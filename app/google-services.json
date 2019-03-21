@@ -225,37 +225,6 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1084613345905:android:85f38c498202a5c7",
-        "android_client_info": {
-          "package_name": "com.nudle.rentplace"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1084613345905-h4hm61iil4aq8ghh6a9ngq3tvlhpdopi.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB58voeUivyqNIcAjG2hslnZFQNibIKWi0"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:1084613345905:android:7ae4168d2c3b7741",
         "android_client_info": {
           "package_name": "com.polka.rentplace"

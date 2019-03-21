@@ -35,6 +35,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.polka.rentplace.model.Products;
 import com.polka.rentplace.prevalent.Prevalent;
+import com.polka.rentplace.utility.Font;
 import com.polka.rentplace.viewHolder.ProductViewHolder;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
@@ -57,15 +58,22 @@ public class HomeActivity extends AppCompatActivity
     private String SearchInput;
     AwesomeBar bar;
     DrawerLayout drawer;
+    Font font = new Font();
 
+    private TextView txtItemName,txtItemPrice,txtItemDecription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
-
+        txtItemName = (TextView) findViewById(R.id.product_name);
+        txtItemPrice = (TextView) findViewById(R.id.product_price);
+        txtItemDecription = (TextView) findViewById(R.id.product_description);
+        Font font = new Font();
+        //font.setFont(getApplicationContext(),txtItemName);
+        //font.setFont(getApplicationContext(),txtItemPrice);
+        //font.setFont(getApplicationContext(),txtItemDecription);
 
         int orient = getResources().getConfiguration().orientation;
         switch(orient) {

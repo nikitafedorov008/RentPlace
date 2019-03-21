@@ -31,6 +31,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.polka.rentplace.prevalent.Prevalent;
+import com.polka.rentplace.utility.Font;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 
@@ -53,12 +54,15 @@ public class SettingsActivity extends AppCompatActivity  {
     private String checker = "";
     private MaterialSearchBar searchBar;
     private ProgressBar spinner;
-
+    Font font = new Font();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        Font font = new Font();
+        //font.setFont(getApplicationContext(),updateTxt);
 
         storageProfilePictureReference = FirebaseStorage.getInstance().getReference().child("Profile Pictures");
 
