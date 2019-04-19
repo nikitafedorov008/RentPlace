@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.polka.rentplace.model.Users;
 import com.polka.rentplace.prevalent.Prevalent;
 
+import es.dmoral.toasty.Toasty;
 import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity
 
                         if (usersData.getPassword().equals(password))
                         {
-                            Toast.makeText(MainActivity.this, "Please wait, you are already logged in...", Toast.LENGTH_SHORT).show();
+                            Toasty.success(MainActivity.this, "Please wait, you are already logged in...", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
 
@@ -115,14 +116,14 @@ public class MainActivity extends AppCompatActivity
                         {
 
                             loadingBar.dismiss();
-                            Toast.makeText(MainActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
+                            Toasty.error(MainActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
                 else
                 {
 
-                    Toast.makeText(MainActivity.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
+                    Toasty.error(MainActivity.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
             }

@@ -49,10 +49,10 @@ import io.paperdb.Paper;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
 
-    private String CategoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime;
+    private String CategoryName, Description, Price, Ptime, Pname, saveCurrentDate, saveCurrentTime;
     private MaterialButton AddNewProductButton;
     private ImageView InputProductImage,bg;
-    private TextInputEditText InputProductName, InputProductCategory, InputProductSubCategory, InputProductPrice;
+    private TextInputEditText InputProductName, InputProductCategory, InputProductSubCategory, InputProductPrice, InputProductTime;
     private TextInputLayout inputLayout;
     private static final int GalleryPick = 1;
     private Uri ImageUri;
@@ -84,6 +84,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         inputLayout =  findViewById(R.id.product_name_in);
         InputProductSubCategory =  findViewById(R.id.product_subcategory_ed);
         InputProductPrice = findViewById(R.id.product_price_ed);
+        InputProductTime = findViewById(R.id.product_time_ed);
         loadingBar = new ProgressDialog(this);
 
 
@@ -161,6 +162,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
     private void ValidateProductData(){
         Description = InputProductSubCategory.getText().toString();
         Price = InputProductPrice.getText().toString();
+        Ptime = InputProductTime.getText().toString();
         Pname = InputProductName.getText().toString();
 
 
@@ -171,6 +173,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             Toast.makeText(this, "Please write product Description", Toast.LENGTH_SHORT).show();
         }else if (TextUtils.isEmpty(Price)){
             Toast.makeText(this, "Please write product Price", Toast.LENGTH_SHORT).show();
+        }else if (TextUtils.isEmpty(Ptime)){
+            Toast.makeText(this, "Please write product Time", Toast.LENGTH_SHORT).show();
         }else if (TextUtils.isEmpty(Pname)){
             Toast.makeText(this, "Please write product Name", Toast.LENGTH_SHORT).show();
         }else{
@@ -287,6 +291,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                                 productMap.put("image", downloadImageUrl);
                                 productMap.put("category", CategoryName);
                                 productMap.put("price", Price);
+                                productMap.put("ptime", Ptime);
                                 productMap.put("pname", Pname);
                                 productMap.put("phone", phone);
                                 productMap.put("password", password);

@@ -2,18 +2,19 @@ package com.polka.rentplace.model;
 
 public class Products {
 
-    private String pname, description, price, image, category, pid, date, time, phone;
+    private String pname, description, price, ptime, image, category, pid, date, time, phone;
     private String sname, ssurname, sphone;
     public Products(){
 
     }
 
-    public Products(String pname,String phone, String description, String price, String image, String category, String pid, String date, String time,
+    public Products(String pname,String phone, String description, String price, String ptime, String image, String category, String pid, String date, String time,
           String ssname, String ssurname) {
         this.pname = pname;
         this.phone = phone;
         this.description = description;
         this.price = price;
+        this.ptime = ptime;
         this.image = image;
         this.category = category;
         this.pid = pid;
@@ -55,6 +56,14 @@ public class Products {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getPtime() {
+        return ptime;
+    }
+
+    public void setPtime(String ptime) {
+        this.ptime = ptime;
     }
 
     public String getImage() {

@@ -3,18 +3,19 @@ package com.polka.rentplace.model;
 import android.content.res.Resources;
 
 public class Cart {
-    private String pid, pname, price, quantity, duscount,image,phone;
+    private String pid, pname, price, ptime, quantity, duscount,image,phone;
 
     public Cart() {
     }
 
 
 
-    public Cart(String pid, String phone, String pname, String price, String quantity, String duscount, String image) {
+    public Cart(String pid, String phone, String pname, String price, String ptime, String quantity, String duscount, String image) {
         this.pid = pid;
         this.phone = phone;
         this.pname = pname;
         this.price = price;
+        this.ptime = ptime;
         this.quantity = quantity;
         this.duscount = duscount;
         this.image = image;
@@ -53,6 +54,14 @@ public class Cart {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getPtime() {
+        return ptime;
+    }
+
+    public void setPtime(String ptime) {
+        this.ptime = ptime;
     }
 
     public String getQuantity() {

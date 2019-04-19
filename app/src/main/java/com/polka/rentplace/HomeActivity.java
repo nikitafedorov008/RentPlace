@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity
     DrawerLayout drawer;
     Font font = new Font();
 
-    private TextView txtItemName,txtItemPrice,txtItemDecription;
+    private TextView txtItemName,txtItemPrice,txtItemTime,txtItemDecription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class HomeActivity extends AppCompatActivity
 
         txtItemName = (TextView) findViewById(R.id.product_name);
         txtItemPrice = (TextView) findViewById(R.id.product_price);
+        txtItemTime = (TextView) findViewById(R.id.product_time);
         txtItemDecription = (TextView) findViewById(R.id.product_description);
         Font font = new Font();
         //font.setFont(getApplicationContext(),txtItemName);
@@ -175,7 +176,8 @@ public class HomeActivity extends AppCompatActivity
         bar.setActionItemClickListener(new AwesomeBar.ActionItemClickListener() {
             @Override
             public void onActionItemClicked(int position, ActionItem actionItem) {
-               searchProducts();
+               bar.setVisibility(View.INVISIBLE);
+               searchBar.setVisibility(View.VISIBLE);
             }
         });
 
@@ -242,6 +244,7 @@ public class HomeActivity extends AppCompatActivity
                             holder.txtProductName.setText(model.getPname());
                             holder.txtProductDescription.setText(model.getDescription());
                             holder.txtProductPrice.setText("Price = " + model.getPrice() + "$");
+                            holder.txtProductTime.setText("Time = " + model.getPtime() + " days");
                             Picasso.get().load(model.getImage()).into(holder.imageView);
                             holder.itemView.setOnClickListener(new View.OnClickListener() {
                                 @Override
@@ -346,6 +349,7 @@ public class HomeActivity extends AppCompatActivity
                            holder.txtProductName.setText(model.getPname());
                            holder.txtProductDescription.setText(model.getDescription());
                            holder.txtProductPrice.setText("Price = " + model.getPrice() + "$");
+                           holder.txtProductTime.setText("Time = " + model.getPtime() + " days");
                            Picasso.get().load(model.getImage()).into(holder.imageView);
                            holder.itemView.setOnClickListener(new View.OnClickListener() {
                                @Override
@@ -387,6 +391,7 @@ public class HomeActivity extends AppCompatActivity
                            holder.txtProductName.setText(model.getPname());
                            holder.txtProductDescription.setText(model.getDescription());
                            holder.txtProductPrice.setText("Price = " + model.getPrice() + "$");
+                           holder.txtProductTime.setText("Time = " + model.getPtime() + " days");
                            Picasso.get().load(model.getImage()).into(holder.imageView);
                            holder.itemView.setOnClickListener(new View.OnClickListener() {
                                @Override

@@ -34,7 +34,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private Uri filePath;
-    private TextView productPrice, productDescription, productName;
+    private TextView productPrice,productTime, productDescription, productName;
     private String productID = "", state = "Nonormal", p2;
 
     @Override
@@ -49,6 +49,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         numberButton = (ElegantNumberButton) findViewById(R.id.number_btn);
         productImage = (ImageView) findViewById(R.id.product_image_details);
         productPrice = (TextView) findViewById(R.id.product_price_details);
+        productTime = (TextView) findViewById(R.id.product_time_details);
         productDescription = (TextView) findViewById(R.id.product_description_details);
         productName = (TextView) findViewById(R.id.product_name_details);
 
@@ -95,6 +96,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartMap.put("pid", productID);
         cartMap.put("pname", productName.getText().toString());
         cartMap.put("price", productPrice.getText().toString());
+        cartMap.put("ptime", productTime.getText().toString());
         cartMap.put("date", saveCurrentDate);
         cartMap.put("time", saveCurrentTime);
         cartMap.put("quantity", numberButton.getNumber());
@@ -140,6 +142,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     Products products = dataSnapshot.getValue(Products.class);
                     productName.setText(products.getPname());
                     productPrice.setText(products.getPrice());
+                    productTime.setText(products.getPtime());
                     productDescription.setText(products.getDescription());
                     p2 = products.getPhone();
                     Picasso.get().load(products.getImage()).into(productImage);

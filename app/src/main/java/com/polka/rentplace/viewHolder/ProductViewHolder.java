@@ -11,7 +11,7 @@ import com.polka.rentplace.R;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView txtProductName, txtProductDescription, txtProductPrice;
+    public TextView txtProductName, txtProductDescription, txtProductPrice, txtProductTime;
     public ImageView imageView;
     public ItemClickListerner listener;
 
@@ -22,6 +22,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder implements View.O
         txtProductName = (TextView) itemView.findViewById(R.id.product_name);
         txtProductDescription = (TextView) itemView.findViewById(R.id.product_description);
         txtProductPrice = (TextView) itemView.findViewById(R.id.product_price);
+        txtProductTime = (TextView) itemView.findViewById(R.id.product_time);
     }
 
     public void setItemClickListerner(ItemClickListerner listerner){
