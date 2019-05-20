@@ -39,6 +39,7 @@ import java.util.HashMap;
 
 import androidx.core.widget.ContentLoadingProgressBar;
 import de.hdodenhof.circleimageview.CircleImageView;
+import es.dmoral.toasty.Toasty;
 
 public class SettingsActivity extends AppCompatActivity  {
 
@@ -227,6 +228,8 @@ public class SettingsActivity extends AppCompatActivity  {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
+                    if (dataSnapshot.child("image").exists())
+                    {
                         String image = dataSnapshot.child("image").getValue().toString();
                         String name = dataSnapshot.child("name").getValue().toString();
                         String Lname = dataSnapshot.child("lastName").getValue().toString();
@@ -238,7 +241,7 @@ public class SettingsActivity extends AppCompatActivity  {
                         if (name.isEmpty() || phone.isEmpty()){
                             fullNameEditText.setText(Prevalent.currentOnlineUser.getName());
                             userPhoneEditText.setText(Prevalent.currentOnlineUser.getPhone());
-                        }else{
+                        }else {
                             Picasso.get().load(image).into(profileImageView);
                             fullNameEditText.setText(name);
                             fullLNameEditText.setText(Lname);
@@ -246,6 +249,7 @@ public class SettingsActivity extends AppCompatActivity  {
                             userPhoneEditText.setText(phone);
                             addressEditText.setText(address);
                             passportSeries.setText(passport);
+                        }
                     }
                 }
             }
