@@ -168,7 +168,7 @@ public class HomeActivity extends AppCompatActivity
         CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
 
         userNameTextView.setText(Prevalent.currentOnlineUser.getName());
-        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.profile).into(profileImageView);
+        Picasso.get().load(Prevalent.currentOnlineUser.getImage()).placeholder(R.drawable.ic_account_circle_dark_24dp).into(profileImageView);
 
 
 
@@ -243,7 +243,7 @@ public class HomeActivity extends AppCompatActivity
                         protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model) {
                             holder.txtProductName.setText(model.getPname());
                             holder.txtProductDescription.setText(model.getDescription());
-                            holder.txtProductPrice.setText(" Price = " + model.getPrice() + "$ ");
+                            holder.txtProductPrice.setText(" Price = " + model.getPrice() + "\u20BD ");
                             holder.txtProductTime.setText( " Time = " + model.getPtime() + " days ");
                             Picasso.get().load(model.getImage()).into(holder.imageView);
                             holder.itemView.setOnClickListener(new View.OnClickListener() {

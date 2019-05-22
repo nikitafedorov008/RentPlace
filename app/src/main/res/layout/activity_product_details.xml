@@ -9,7 +9,6 @@
     android:background="@color/black_overlay"
     tools:context=".ProductDetailsActivity">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -26,45 +25,72 @@
             android:id="@+id/product_name_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_below="@id/product_image_details"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="-41dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="left"
             android:text="Product Name"
             android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textSize="32sp"
             android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/rL"
+        android:gravity="center"
+        android:background="@drawable/material_back"
+        android:layout_below="@+id/product_image_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
 
         <TextView
             android:id="@+id/product_price_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/product_name_details"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="67dp"
-            android:gravity="center"
+            android:background="@drawable/material_back"
+            android:backgroundTint="@color/black_overlay"
             android:text="Product Price"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/product_image"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="6dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_green_light"/>
 
         <TextView
             android:id="@+id/product_time_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/product_name_details"
+            android:layout_below="@+id/product_image"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="82dp"
-            android:gravity="center"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/material_back"
+            android:backgroundTint="@color/black_overlay"
             android:text="Product Time"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="18sp"
             android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
 
         <TextView
             android:id="@+id/product_description_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/product_price_details"
+            android:layout_below="@id/rL"
             android:text="Product Description"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"

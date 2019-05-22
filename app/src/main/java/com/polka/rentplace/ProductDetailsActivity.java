@@ -141,8 +141,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
                     Products products = dataSnapshot.getValue(Products.class);
                     productName.setText(products.getPname());
-                    productPrice.setText(products.getPrice());
-                    productTime.setText(products.getPtime());
+                    productPrice.setText("  " + products.getPrice() + "\u20BD  ");
+                    productTime.setText("  " + products.getPtime() + " days  ");
                     productDescription.setText(products.getDescription());
                     p2 = products.getPhone();
                     Picasso.get().load(products.getImage()).into(productImage);

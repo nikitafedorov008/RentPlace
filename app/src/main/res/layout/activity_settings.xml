@@ -27,7 +27,7 @@
                 android:id="@+id/settings_profile_image"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:src="@drawable/profile"
+                android:src="@drawable/ic_account_circle_24dp"
                 android:background="@drawable/corners_130"
                 android:layout_centerHorizontal="true"/>
 
