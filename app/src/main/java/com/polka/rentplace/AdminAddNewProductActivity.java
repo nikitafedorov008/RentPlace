@@ -45,11 +45,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+import es.dmoral.toasty.Toasty;
 import io.paperdb.Paper;
 
 public class AdminAddNewProductActivity extends AppCompatActivity {
 
-    private String CategoryName, Description, Price, Ptime, Pname, saveCurrentDate, saveCurrentTime;
+    private String CategoryName, Description, Price, Ptime, Pname, Fname, Lname, saveCurrentDate, saveCurrentTime;
     private MaterialButton AddNewProductButton;
     private ImageView InputProductImage,bg;
     private TextInputEditText InputProductName, InputProductCategory, InputProductSubCategory, InputProductPrice, InputProductTime;
@@ -167,16 +168,16 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
 
         if (ImageUri == null){
-            Toast.makeText(this, "product image is mandatory", Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "product image is mandatory", Toast.LENGTH_SHORT).show();
 
         }else if (TextUtils.isEmpty(Description)){
-            Toast.makeText(this, "Please write product Description", Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "Please write product Description", Toast.LENGTH_SHORT).show();
         }else if (TextUtils.isEmpty(Price)){
-            Toast.makeText(this, "Please write product Price", Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "Please write product Price", Toast.LENGTH_SHORT).show();
         }else if (TextUtils.isEmpty(Ptime)){
-            Toast.makeText(this, "Please write product Time", Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "Please write product Time", Toast.LENGTH_SHORT).show();
         }else if (TextUtils.isEmpty(Pname)){
-            Toast.makeText(this, "Please write product Name", Toast.LENGTH_SHORT).show();
+            Toasty.error(this, "Please write product Name", Toast.LENGTH_SHORT).show();
         }else{
             StoreProductInformation();
         }
@@ -229,7 +230,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
                             downloadImageUrl = task.getResult().toString();
 
-                            Toast.makeText(AdminAddNewProductActivity.this, "Products image save to Database Successfully..", Toast.LENGTH_SHORT).show();
+                            Toasty.success(AdminAddNewProductActivity.this, "Products image save to Database Successfully..", Toast.LENGTH_SHORT).show();
 
                             String phone = Prevalent.currentOnlineUser.getPhone();
                             String password = Prevalent.currentOnlineUser.getPassword();
@@ -293,6 +294,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                                 productMap.put("price", Price);
                                 productMap.put("ptime", Ptime);
                                 productMap.put("pname", Pname);
+                                productMap.put("Fname", Users.name);
+                                productMap.put("Lname", Users.lastName);
                                 productMap.put("phone", phone);
                                 productMap.put("password", password);
 
@@ -308,12 +311,12 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
 
                                                     loadingBar.dismiss();
-                                                    Toast.makeText(AdminAddNewProductActivity.this, "Products is added successfully.. ", Toast.LENGTH_SHORT).show();
+                                                    Toasty.success(AdminAddNewProductActivity.this, "Products is added successfully.. ", Toast.LENGTH_SHORT).show();
 
                                                 }else{
                                                     loadingBar.dismiss();
                                                     String message = task.getException().toString();
-                                                    Toast.makeText(AdminAddNewProductActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                                                    Toasty.error(AdminAddNewProductActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
 
                                                 }
                                             }
@@ -323,13 +326,13 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                         else
                         {
                             loadingBar.dismiss();
-                            Toast.makeText(AdminAddNewProductActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
+                            Toasty.error(AdminAddNewProductActivity.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
                 else
                 {
-                    Toast.makeText(AdminAddNewProductActivity.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
+                    Toasty.error(AdminAddNewProductActivity.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
                 }
             }

@@ -2,15 +2,16 @@ package com.polka.rentplace.model;
 
 public class Users
 {
-    private String name, phone, password, image, address;
+    public static String name, lastName, phone, password, image, address;
 
     public Users()
     {
 
     }
 
-    public Users(String name, String phone, String password, String image, String address) {
+    public Users(String name, String lastName, String phone, String password, String image, String address) {
         this.name = name;
+        this.lastName = lastName;
         this.phone = phone;
         this.password = password;
         this.image = image;
@@ -24,6 +25,14 @@ public class Users
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPhone() {

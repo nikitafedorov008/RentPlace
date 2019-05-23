@@ -3,13 +3,13 @@ package com.polka.rentplace.model;
 public class Products {
 
     private String pname, description, price, ptime, image, category, pid, date, time, phone;
-    private String sname, ssurname, sphone;
+    private String Fname, Lname, sphone;
     public Products(){
 
     }
 
     public Products(String pname,String phone, String description, String price, String ptime, String image, String category, String pid, String date, String time,
-          String ssname, String ssurname) {
+          String Fname, String Lname) {
         this.pname = pname;
         this.phone = phone;
         this.description = description;
@@ -21,8 +21,8 @@ public class Products {
         this.date = date;
         this.time = time;
 
-        this.sname = ssname;
-        this.ssurname = ssurname;
+        this.Fname = Fname;
+        this.Lname = Lname;
         this.sphone = sphone;
     }
 
@@ -106,20 +106,20 @@ public class Products {
         this.time = time;
     }
 
-    public String getSname() {
-        return sname;
+    public String getFname() {
+        return Fname;
     }
 
-    public void setSname(String sname) {
-        this.sname = sname;
+    public void setFname(String Fname) {
+        this.Fname = Fname;
     }
 
-    public String getSsurname() {
-        return ssurname;
+    public String getLname() {
+        return Lname;
     }
 
-    public void setSsurname(String ssurname) {
-        this.ssurname = ssurname;
+    public void setLname(String Lname) {
+        this.Lname = Lname;
     }
 
     public String getSphone() {

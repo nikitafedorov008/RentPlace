@@ -34,7 +34,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private Uri filePath;
-    private TextView productPrice,productTime, productDescription, productName;
+    private TextView productPrice,productTime, productDescription, productName, productFnameLname;
     private String productID = "", state = "Nonormal", p2;
 
     @Override
@@ -52,6 +52,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productTime = (TextView) findViewById(R.id.product_time_details);
         productDescription = (TextView) findViewById(R.id.product_description_details);
         productName = (TextView) findViewById(R.id.product_name_details);
+        productFnameLname = (TextView) findViewById(R.id.product_fname_lname_details);
 
         getProductDetails(productID);
 
@@ -97,6 +98,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartMap.put("pname", productName.getText().toString());
         cartMap.put("price", productPrice.getText().toString());
         cartMap.put("ptime", productTime.getText().toString());
+        cartMap.put("Fname", productFnameLname.getText().toString());
         cartMap.put("date", saveCurrentDate);
         cartMap.put("time", saveCurrentTime);
         cartMap.put("quantity", numberButton.getNumber());
@@ -144,6 +146,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     productPrice.setText("  " + products.getPrice() + "\u20BD  ");
                     productTime.setText("  " + products.getPtime() + " days  ");
                     productDescription.setText(products.getDescription());
+                    productFnameLname.setText("landlord is " + products.getFname() + " " + products.getLname());
                     p2 = products.getPhone();
                     Picasso.get().load(products.getImage()).into(productImage);
 
