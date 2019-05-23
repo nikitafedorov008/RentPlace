@@ -53,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity  {
     private StorageTask uploadTask;
     private StorageReference storageProfilePictureReference;
     private String checker = "";
-    private MaterialSearchBar searchBar;
+//    private MaterialSearchBar searchBar;
     private ProgressBar spinner;
     Font font = new Font();
 

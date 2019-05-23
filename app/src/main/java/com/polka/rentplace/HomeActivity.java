@@ -104,36 +104,36 @@ public class HomeActivity extends AppCompatActivity
         mFloatingToolbar.addMorphListener(this);
         mFloatingToolbar.setClickListener(this);
         searchBar = (MaterialSearchBar) findViewById(R.id.searchBar);
-
-        searchBar.setVisibility(View.GONE);
-
-        searchBar.enableSearch();
-
-        searchBar.setOnSearchActionListener(this);
-
-        searchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
-            @Override
-            public void onSearchStateChanged(boolean enabled) {
-
-            }
-
-            @Override
-            public void onSearchConfirmed(CharSequence text) {
-                SearchInput = searchBar.getText();
-
-
-                onStart();
-                searchBar.disableSearch();
-                searchBar.setPlaceHolder(SearchInput);
-            }
-
-            @Override
-            public void onButtonClicked(int buttonCode) {
-
-            }
-        });
-
-        searchBar.setCardViewElevation(5);
+//
+//        searchBar.setVisibility(View.GONE);
+//
+//        searchBar.enableSearch();
+//
+//        searchBar.setOnSearchActionListener(this);
+//
+//        searchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
+//            @Override
+//            public void onSearchStateChanged(boolean enabled) {
+//
+//            }
+//
+//            @Override
+//            public void onSearchConfirmed(CharSequence text) {
+//                SearchInput = searchBar.getText();
+//
+//
+//                onStart();
+//                searchBar.disableSearch();
+//                searchBar.setPlaceHolder(SearchInput);
+//            }
+//
+//            @Override
+//            public void onButtonClicked(int buttonCode) {
+//
+//            }
+//        });
+//
+//        searchBar.setCardViewElevation(5);
 
         fab = findViewById(R.id.fab);
 
@@ -155,10 +155,10 @@ public class HomeActivity extends AppCompatActivity
 
 
 //        appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
-        barTextView = (TextView) findViewById(R.id.barTextView);
+//        barTextView = (TextView) findViewById(R.id.barTextView);
 //        appBarLayout.setVisibility(View.GONE);
         bar.setVisibility(View.GONE);
-        barTextView.setVisibility(View.INVISIBLE);
+//        barTextView.setVisibility(View.INVISIBLE);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -177,7 +177,7 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onActionItemClicked(int position, ActionItem actionItem) {
                bar.setVisibility(View.INVISIBLE);
-               searchBar.setVisibility(View.VISIBLE);
+//               searchBar.setVisibility(View.VISIBLE);
             }
         });
 
@@ -230,7 +230,7 @@ public class HomeActivity extends AppCompatActivity
         super.onStart();
 
 //        appBarLayout.setVisibility(View.VISIBLE);
-        searchBar.setVisibility(View.INVISIBLE);
+//        searchBar.setVisibility(View.INVISIBLE);
 
         bar.setVisibility(View.VISIBLE);
         FirebaseRecyclerOptions<Products> options =
@@ -376,8 +376,6 @@ public class HomeActivity extends AppCompatActivity
 
 
        public void searchProducts(){
-           bar.setVisibility(View.INVISIBLE);
-           searchBar.setVisibility(View.VISIBLE);
            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Products");
 
            FirebaseRecyclerOptions<Products> options = new FirebaseRecyclerOptions.Builder<Products>()
